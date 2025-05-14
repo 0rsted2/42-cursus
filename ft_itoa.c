@@ -6,48 +6,60 @@
 /*   By:  ouben-sa < ouben-sa@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 21:07:04 by  ouben-sa         #+#    #+#             */
-/*   Updated: 2025/05/07 15:43:48 by  ouben-sa        ###   ########.fr       */
+/*   Updated: 2025/05/14 05:11:05 by  ouben-sa        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static size_t	count_size(long nb)
+{
+	size_t	size;
+
+	size = 0;
+	if (nb < 0)
+	{
+		nb = nb * (-1);
+		size = 1;
+	}
+	if (nb == 0)
+		size = 1;
+	else
+	{
+		while (nb)
+		{
+			nb = nb / 10;
+			size++;
+		}
+	}
+	return (size);
+}
+
 char	*ft_itoa(int n)
 {
-	long	nbr;
-	int	len;
-	int	i;
-	char	*result;
-	i = 0;
-	len = ft_len(nbr);
-}
+	size_t	size;
+	long	nb;
+	char	*str;
+	int		is_negative;
 
-static char	*ft_itoalloc(int len)
-{
-	char	*tmp;
-
-	tmp = malloc(sizeof(char) * (len + 1));
-	if (!tmp)
+	size = count_size((long)n);
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (str == NULL)
 		return (NULL);
-		
-}
-
-static int	ft_len(long nbr)
-{
-	int	count;
-
-	count = 0;
-	if (nbr < 0)
+	nb = (long)n;
+	is_negative = 0;
+	if (nb < 0)
 	{
-		count++;
-		nbr = -nbr;
+		nb = nb * (-1);
+		str[0] = '-';
+		is_negative = 1;
 	}
-	if (nbr == 0)
-		count++;
-	while (nbr != 0)
+	str[size] = '\0';
+	while (size > (size_t)is_negative)
 	{
-		nbr \= 10;
-		count++;
+		str[size - 1] = nb % 10 + '0';
+		nb = nb / 10;
+		size--;
 	}
-	return (count);
+	return (str);
 }

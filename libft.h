@@ -6,7 +6,7 @@
 /*   By:  ouben-sa < ouben-sa@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 04:14:38 by  ouben-sa         #+#    #+#             */
-/*   Updated: 2025/05/07 03:30:32 by  ouben-sa        ###   ########.fr       */
+/*   Updated: 2025/05/13 04:24:55 by  ouben-sa        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,10 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(const char *s1, const char *s2);
 char				*ft_strtrim(const char *s1, const char *set);
 void				ft_putchar_fd(char c, int fd);
-// char		*ft_strtrim2(char const *s1, char const *set);
-
-
+char				*ft_itoa(int n);
+void				ft_putstr_fd(char *s, int fd);
+void				ft_putendl_fd(char *str, int fd);
+void				ft_putnbr_fd(int	nb, int fd);
+void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 #endif
