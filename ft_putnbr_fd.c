@@ -6,7 +6,7 @@
 /*   By:  ouben-sa < ouben-sa@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 02:00:25 by  ouben-sa         #+#    #+#             */
-/*   Updated: 2025/05/13 02:58:22 by  ouben-sa        ###   ########.fr       */
+/*   Updated: 2025/05/17 01:12:05 by  ouben-sa        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_putnbr_fd(int nb, int fd)
 {
-	char *str;
+	char	*str;
 
 	str = "0123456789";
 	if (nb == -2147483648)
 	{
-		write (fd, "-2147483648", 11);
+		write(fd, "-2147483648", 11);
 		return ;
 	}
 	if (nb < 0)
@@ -29,10 +29,10 @@ void	ft_putnbr_fd(int nb, int fd)
 	}
 	if (nb >= 10)
 		ft_putnbr_fd(nb / 10, fd);
-	write (fd, &str[nb % 10], 1);
+	write(fd, &str[nb % 10], 1);
 }
 
-// int	main()
+// int	main(void)
 // {
 // 	int fd;
 

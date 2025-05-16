@@ -6,7 +6,7 @@
 /*   By:  ouben-sa < ouben-sa@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 04:14:38 by  ouben-sa         #+#    #+#             */
-/*   Updated: 2025/05/13 04:24:55 by  ouben-sa        ###   ########.fr       */
+/*   Updated: 2025/05/17 01:15:49 by  ouben-sa        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+// PARTIE OBLIGATOIRE
 
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
@@ -53,7 +55,11 @@ void				ft_putchar_fd(char c, int fd);
 char				*ft_itoa(int n);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *str, int fd);
-void				ft_putnbr_fd(int	nb, int fd);
+void				ft_putnbr_fd(int nb, int fd);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
+char				**ft_split(const char *str, char c);
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+// PARTIE BONUS
 
 #endif
