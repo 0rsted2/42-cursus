@@ -6,14 +6,14 @@
 /*   By:  ouben-sa < ouben-sa@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 04:28:22 by  ouben-sa         #+#    #+#             */
-/*   Updated: 2025/05/17 00:49:08 by  ouben-sa        ###   ########.fr       */
+/*   Updated: 2025/05/18 12:29:52 by  ouben-sa        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-size_t	ft_strlen_malicieux(const char *str, char c)
+static size_t	ft_strlen_malicieux(const char *str, char c)
 {
 	size_t	i;
 
@@ -25,7 +25,7 @@ size_t	ft_strlen_malicieux(const char *str, char c)
 	return (i);
 }
 
-char	*ft_strdup_malicieux(const char *src, char c)
+static char	*ft_strdup_malicieux(const char *src, char c)
 {
 	char	*dest;
 	int		i;
@@ -63,7 +63,7 @@ static int	count_word(const char *str, char c)
 	return (count);
 }
 
-int	free_split(char **res)
+static int	free_split(char **res)
 {
 	int	i;
 
