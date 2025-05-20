@@ -6,7 +6,7 @@
 /*   By:  ouben-sa < ouben-sa@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 04:14:38 by  ouben-sa         #+#    #+#             */
-/*   Updated: 2025/05/17 01:15:49 by  ouben-sa        ###   ########.fr       */
+/*   Updated: 2025/05/20 13:38:53 by  ouben-sa        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,16 @@ void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				**ft_split(const char *str, char c);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
-// PARTIE BONUS
+//PARTIE BONUS
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstclear(t_list **lst, void (*del)(void *));
+int					ft_lstsize(t_list *lst);
+void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(void *));
+t_list				*ft_lstlast(t_list *lst);
+void				ft_lstadd_front(t_list **lst, t_list *new);
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+						void (*del)(void *));
+t_list				*ft_lstnew(void *content);
 
 #endif
